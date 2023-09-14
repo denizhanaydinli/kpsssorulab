@@ -1,5 +1,7 @@
 import 'package:figma/constants.dart';
 import 'package:flutter/material.dart';
+import 'dart:async'; // Timer'ı içe aktarın
+import 'login.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,9 +18,25 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key? key});
+  @override
+  _WelcomeScreenState createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Otomatik yönlendirme için Timer kullanımı
+    Timer(Duration(seconds: 2), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +51,8 @@ class WelcomeScreen extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Image.asset(
-                scale: 2.0,
                 "assets/kitap.png",
+                scale: 2.0,
                 fit: BoxFit.scaleDown,
               ),
             ),
@@ -50,7 +68,6 @@ class WelcomeScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            // Diğer metin veya widget'ları buraya ekleyebilirsiniz
           ],
         ),
       ),
