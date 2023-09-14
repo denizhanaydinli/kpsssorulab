@@ -38,7 +38,7 @@ class _HedefScreenState extends State<HedefScreen> {
                   children: [
                     SizedBox(height: 100.0),
                     Text(
-                      "Merhaba, ${widget.kullaniciAdi} Günlük kaç soru çözme bildirimi almak istersiniz?",
+                      "Merhaba ${widget.kullaniciAdi}, günlük kaç soru çözme bildirimi almak istersiniz?",
                       style: TextStyle(
                         color: Colors.white, // Yazı rengi beyaz
                         fontWeight: FontWeight.bold, // Kalın yazı tipi
