@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'hedefsoru.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -8,6 +10,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  void _onLoginButtonPressed() {
+    // Burada yapılacak işlem: Kullanıcı adı ve şifreyi kontrol edebilir ve giriş işlemi yapabilirsiniz.
+
+    // Giriş başarılı ise hedef ekranına yönlendirme
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => HedefScreen()),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +55,15 @@ class _LoginScreenState extends State<LoginScreen> {
                           border: InputBorder.none, // Kenarlığı kaldırır
                         ),
                       ),
+                    ),
+                    SizedBox(height: 32.0),
+                    ElevatedButton(
+                        onPressed: _onLoginButtonPressed,
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 28.0, horizontal: 48.0), // Butonun iç boşluğunu ayarlar
+                        textStyle: TextStyle(fontSize: 20.0), // Buton metninin yazı tipi boyutunu ayarlar
+                      ),
+                        child: Text('İlerle'),
                     )
                   ],
                 ),
