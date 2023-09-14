@@ -1,7 +1,10 @@
+import 'package:figma/login.dart';
 import 'package:flutter/material.dart';
 
 class HedefScreen extends StatefulWidget {
-  const HedefScreen({super.key});
+  final String kullaniciAdi;
+  //const HedefScreen({super.key});
+  HedefScreen({Key? key, required this.kullaniciAdi}) : super(key: key);
 
   @override
   State<HedefScreen> createState() => _HedefScreenState();
@@ -14,7 +17,7 @@ class _HedefScreenState extends State<HedefScreen> {
     // Giriş başarılı ise hedef ekranına yönlendirme
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => HedefScreen()),//burası yeni ekrana yönlendirilecek
+      MaterialPageRoute(builder: (context) => LoginScreen()),//burası yeni ekrana yönlendirilecek
     );
   }
   @override
@@ -35,7 +38,7 @@ class _HedefScreenState extends State<HedefScreen> {
                   children: [
                     SizedBox(height: 100.0),
                     Text(
-                      "Günlük kaç soru çözme bildirimi almak istersiniz?",
+                      "Merhaba, ${widget.kullaniciAdi} Günlük kaç soru çözme bildirimi almak istersiniz?",
                       style: TextStyle(
                         color: Colors.white, // Yazı rengi beyaz
                         fontWeight: FontWeight.bold, // Kalın yazı tipi

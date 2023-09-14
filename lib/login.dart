@@ -10,13 +10,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  var kullaniciAdi = '';
   void _onLoginButtonPressed() {
+
+    setState(() {
+      kullaniciAdi;  // TextField'dan gelen değer burada atanmalı.
+    });
     // Burada yapılacak işlem: Kullanıcı adı ve şifreyi kontrol edebilir ve giriş işlemi yapabilirsiniz.
 
     // Giriş başarılı ise hedef ekranına yönlendirme
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => HedefScreen()),
+      MaterialPageRoute(builder: (context) => HedefScreen(kullaniciAdi: kullaniciAdi)),
     );
   }
   @override
@@ -50,6 +55,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(10.0), // Kenarlığın yuvarlak köşeli olması
                       ),
                       child: TextField(
+                        onChanged: (value) {
+                          // Kullanıcının girdiği metni burada alabilirsiniz.
+                          setState(() {
+                             kullaniciAdi=value;
+                          });
+                        },
                         decoration: InputDecoration(
                           hintText: 'Kullanıcı Adı',
                           border: InputBorder.none, // Kenarlığı kaldırır
