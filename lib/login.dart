@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
   }
-  void _onAvatarButtonPressed() async {
+  void _onAvatarButtonPressed() async {// resime basınca avatar sayfasına yönlendirme
     var returnedAvatar = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
     if (returnedAvatar != null) {
       setState(() {
