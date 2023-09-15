@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'categories.dart';
 
 class TimePeriodScreen extends StatefulWidget {
   const TimePeriodScreen({super.key});
@@ -104,7 +105,7 @@ class _TimePeriodScreenState extends State<TimePeriodScreen> {
                              text: '${endTime!.hour}:${endTime!.minute}',
                            ) : null,
 
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: 'Bitiş Saati',
                             border: InputBorder.none, // Kenarlığı kaldırır
                           ),
@@ -133,9 +134,27 @@ class _TimePeriodScreenState extends State<TimePeriodScreen> {
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(vertical: 16.0,horizontal: 32.0),
                       textStyle: TextStyle(fontSize: 18.0),
+                      primary: Color(0xFF7E7878),
                     ),
                       child: Text('Zaman aralığını kaydet'),
-                    )
+                    ),
+
+                    SizedBox(height: 32.0),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        // Atla düğmesine tıklanırsa direkt olarak CategoriesScreen'e yönlendirin.
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => CategoriesScreen(),
+                        ));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                        textStyle: TextStyle(fontSize: 18.0),
+                        primary: Color(0xFF7E7878), // Düğme rengini istediğiniz bir renkle değiştirebilirsiniz.
+                      ),
+                      child: Text('İlerle'),
+                    ),
 
                   ],
                 ),

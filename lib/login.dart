@@ -29,6 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
       context,
       MaterialPageRoute(builder: (context) => HedefScreen(kullaniciAdi: kullaniciAdi,selectedAvatar: widget.selectedAvatar)),
     );
+
+  }
+  void _onAvatarButtonPressed() async {
     var returnedAvatar = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
     if (returnedAvatar != null) {
       setState(() {
@@ -36,6 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     }
   }
+
 
 
   @override
@@ -56,14 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     SizedBox(height: 72.0),
                     InkWell(
-                      onTap: () async{
-                         var returnedAvatar = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
-                        // Resme tıklama işlemi burada işlenir, yeni sayfaya yönlendirme vb.
-                       if(returnedAvatar != null){
-                         setState(() {
-                           selectedAvatar=returnedAvatar;
-                         });
-                       }
+                      onTap: () {
+                        _onAvatarButtonPressed();
                       },
                       child: CircleAvatar( // Yeni avatarı yuvarlak olarak göstermek için CircleAvatar kullanın
                         backgroundImage: AssetImage(
