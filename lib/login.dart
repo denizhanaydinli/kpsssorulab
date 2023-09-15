@@ -65,10 +65,11 @@ class _LoginScreenState extends State<LoginScreen> {
                          });
                        }
                       },
-                      child :Image.asset(
-                        selectedAvatar,
-                        scale: 3.0,
-                        fit: BoxFit.scaleDown,
+                      child: CircleAvatar( // Yeni avatarı yuvarlak olarak göstermek için CircleAvatar kullanın
+                        backgroundImage: AssetImage(
+                          selectedAvatar,
+                        ),
+                        radius: 50.0,
                       ),
                     ),
 

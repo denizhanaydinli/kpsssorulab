@@ -54,9 +54,11 @@ class _AvatarScreenState extends State<AvatarScreen> {
               ),
             ),
             const SizedBox(height: 30.0),
-            CircleAvatar(
-              backgroundImage: AssetImage(selectedAvatar),
-              radius: 50.0,
+            Image.asset(
+              selectedAvatar,
+              width: 100, // İstediğiniz genişliği ayarlayabilirsiniz
+              height: 100, // İstediğiniz yüksekliği ayarlayabilirsiniz
+              fit: BoxFit.cover, // Resmi dörtgen olarak görüntüler
             ),
             const SizedBox(height: 20.0),
             Expanded(
