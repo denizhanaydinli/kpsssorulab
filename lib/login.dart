@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'avatar.dart';
 import 'hedefsoru.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       kullaniciAdi;  // TextField'dan gelen değer burada atanmalı.
     });
+    //todo buraya eğer kullanıcı ismini girmemişse defaultuser1234 gibi sürekli artan bir değer girecek
     // Burada yapılacak işlem: Kullanıcı adı ve şifreyi kontrol edebilir ve giriş işlemi yapabilirsiniz.
 
     // Giriş başarılı ise hedef ekranına yönlendirme
@@ -41,11 +42,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: [
                     SizedBox(height: 72.0),
-                    Image.asset(
-                      "assets/loginpic.png",
-                      scale: 3.0,
-                      fit: BoxFit.scaleDown,
+                    InkWell(
+                      onTap: () {
+                        // Resme tıklama işlemi burada işlenir, yeni sayfaya yönlendirme vb.
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
+                      },
+                      child :Image.asset(
+                        "assets/loginpic.png",
+                        scale: 3.0,
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
+
                     SizedBox(height: 48.0), // Resim ile metin arasında bir boşluk ekler
                     Container(
                       width: 600, // Genişlik

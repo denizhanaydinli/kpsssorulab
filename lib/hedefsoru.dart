@@ -17,7 +17,7 @@ class _HedefScreenState extends State<HedefScreen> {
     // Giriş başarılı ise hedef ekranına yönlendirme
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),//burası yeni ekrana yönlendirilecek
+      MaterialPageRoute(builder: (context) => LoginScreen()),//todo burası yeni ekrana yönlendirilecek
     );
   }
   @override
