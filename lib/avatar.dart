@@ -16,6 +16,14 @@ class _AvatarScreenState extends State<AvatarScreen> {
     'assets/avatar2.png',
     'assets/avatar3.png',
     'assets/avatar4.png',
+    'assets/avatar5.png',
+    'assets/avatar6.png',
+    'assets/avatar7.png',
+    'assets/avatar8.png',
+    'assets/avatar9.png',
+    'assets/avatar10.png',
+    'assets/avatar11.png',
+    'assets/avatar12.png',
     // Diğer avatar yollarını buraya ekleyin
   ];
   void _onAvatarSelected(String avatarPath) {
