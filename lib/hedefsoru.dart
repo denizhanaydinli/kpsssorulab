@@ -1,4 +1,5 @@
 import 'package:figma/login.dart';
+import 'package:figma/timeperiod.dart';
 import 'package:flutter/material.dart';
 
 class HedefScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _HedefScreenState extends State<HedefScreen> {
     // Giriş başarılı ise hedef ekranına yönlendirme
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoginScreen(selectedAvatar: '',)),//todo burası yeni ekrana yönlendirilecek
+      MaterialPageRoute(builder: (context) => TimePeriodScreen()),//todo burası yeni ekrana yönlendirilecek
     );
   }
   @override
