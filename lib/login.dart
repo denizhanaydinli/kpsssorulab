@@ -3,7 +3,9 @@ import 'avatar.dart';
 import 'hedefsoru.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  String selectedAvatar = 'assets/loginpic.png';
+
+  LoginScreen({required this.selectedAvatar, Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -11,10 +13,13 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   var kullaniciAdi = '';
-  void _onLoginButtonPressed() {
+  String selectedAvatar = 'assets/loginpic.png';
+
+  void _onLoginButtonPressed() async{
 
     setState(() {
-      kullaniciAdi;  // TextField'dan gelen değer burada atanmalı.
+      kullaniciAdi;
+     // TextField'dan gelen değer burada atanmalı.
     });
     //todo buraya eğer kullanıcı ismini girmemişse defaultuser1234 gibi sürekli artan bir değer girecek
     // Burada yapılacak işlem: Kullanıcı adı ve şifreyi kontrol edebilir ve giriş işlemi yapabilirsiniz.
@@ -22,9 +27,17 @@ class _LoginScreenState extends State<LoginScreen> {
     // Giriş başarılı ise hedef ekranına yönlendirme
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => HedefScreen(kullaniciAdi: kullaniciAdi)),
+      MaterialPageRoute(builder: (context) => HedefScreen(kullaniciAdi: kullaniciAdi,selectedAvatar: widget.selectedAvatar)),
     );
+    var returnedAvatar = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
+    if (returnedAvatar != null) {
+      setState(() {
+        selectedAvatar = returnedAvatar;
+      });
+    }
   }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +56,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     SizedBox(height: 72.0),
                     InkWell(
-                      onTap: () {
+                      onTap: () async{
+                         var returnedAvatar = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
                         // Resme tıklama işlemi burada işlenir, yeni sayfaya yönlendirme vb.
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
+                       if(returnedAvatar != null){
+                         setState(() {
+                           selectedAvatar=returnedAvatar;
+                         });
+                       }
                       },
                       child :Image.asset(
-                        "assets/loginpic.png",
+                        selectedAvatar,
                         scale: 3.0,
                         fit: BoxFit.scaleDown,
                       ),

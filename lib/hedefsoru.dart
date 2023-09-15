@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class HedefScreen extends StatefulWidget {
   final String kullaniciAdi;
   //const HedefScreen({super.key});
-  HedefScreen({Key? key, required this.kullaniciAdi}) : super(key: key);
+  HedefScreen({Key? key, required this.kullaniciAdi, required selectedAvatar}) : super(key: key);
 
   @override
   State<HedefScreen> createState() => _HedefScreenState();
@@ -17,7 +17,7 @@ class _HedefScreenState extends State<HedefScreen> {
     // Giriş başarılı ise hedef ekranına yönlendirme
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),//todo burası yeni ekrana yönlendirilecek
+      MaterialPageRoute(builder: (context) => LoginScreen(selectedAvatar: '',)),//todo burası yeni ekrana yönlendirilecek
     );
   }
   @override

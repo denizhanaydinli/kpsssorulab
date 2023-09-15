@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'login.dart';
 
 class AvatarScreen extends StatefulWidget {
-  const AvatarScreen({super.key});
+  const AvatarScreen({Key? key}) : super(key: key);
 
   @override
   State<AvatarScreen> createState() => _AvatarScreenState();
 }
 
 class _AvatarScreenState extends State<AvatarScreen> {
-  String selectedAvatar = 'assets/loginpic.png'; // Başlangıçta bir varsayılan avatar seçebilirsiniz.
+  var selectedAvatar = 'assets/loginpic.png'; // Başlangıçta bir varsayılan avatar seçebilirsiniz.
   final List<String> avatarPaths = [
     'assets/avatar1.png',
     'assets/avatar2.png',
@@ -30,7 +30,8 @@ class _AvatarScreenState extends State<AvatarScreen> {
     setState(() {
       selectedAvatar = avatarPath;
     });
-    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+    Navigator.pop(context, avatarPath);
+    //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(selectedAvatar: selectedAvatar)));
   }
 
   @override
@@ -76,13 +77,7 @@ class _AvatarScreenState extends State<AvatarScreen> {
               ),
             ),
             const SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: () {
-                // Seçilen avatarı geri dönmek için Navigator kullanabilirsiniz
-                Navigator.pop(context, selectedAvatar);
-              },
-              child: Text('Tamam'),
-            ),
+
           ],
         ),
       )
