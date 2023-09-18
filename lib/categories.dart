@@ -53,7 +53,7 @@ class CategoriesScreen extends StatelessWidget {
       onPressed: () {
         // Atla düğmesine tıklanırsa direkt olarak CategoriesScreen'e yönlendirin.
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => TestScreen(),
+          builder: (context) => TestScreen(category: category),
         ));
       },
       style: ElevatedButton.styleFrom(

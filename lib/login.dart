@@ -4,7 +4,6 @@ import 'hedefsoru.dart';
 
 class LoginScreen extends StatefulWidget {
   String selectedAvatar = 'assets/loginpic.png';
-
   LoginScreen({required this.selectedAvatar, Key? key}) : super(key: key);
 
   @override
@@ -22,14 +21,10 @@ class _LoginScreenState extends State<LoginScreen> {
      // TextField'dan gelen değer burada atanmalı.
     });
     //todo buraya eğer kullanıcı ismini girmemişse defaultuser1234 gibi sürekli artan bir değer girecek
-    // Burada yapılacak işlem: Kullanıcı adı ve şifreyi kontrol edebilir ve giriş işlemi yapabilirsiniz.
-
-    // Giriş başarılı ise hedef ekranına yönlendirme
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => HedefScreen(kullaniciAdi: kullaniciAdi,selectedAvatar: widget.selectedAvatar)),
     );
-
   }
   void _onAvatarButtonPressed() async {// resime basınca avatar sayfasına yönlendirme
     var returnedAvatar = await Navigator.push(context, MaterialPageRoute(builder: (context) => AvatarScreen()));
@@ -39,8 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +63,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         radius: 50.0,
                       ),
                     ),
-
                     SizedBox(height: 48.0), // Resim ile metin arasında bir boşluk ekler
                     Container(
                       width: 600, // Genişlik
