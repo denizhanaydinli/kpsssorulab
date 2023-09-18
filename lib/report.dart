@@ -14,7 +14,7 @@ class _ReportScreenState extends State<ReportScreen> {
     return Scaffold(
       backgroundColor: Color(0xFF302D2D),
       appBar: AppBar(
-        backgroundColor: Color(0xFFE5F0E2),
+        backgroundColor: Color(0xFFE2E8F0),
         title: Row(
           children: [
             IconButton(
@@ -28,7 +28,7 @@ class _ReportScreenState extends State<ReportScreen> {
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ],
