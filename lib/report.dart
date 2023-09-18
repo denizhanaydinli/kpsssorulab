@@ -18,7 +18,8 @@ class _ReportScreenState extends State<ReportScreen> {
         title: Row(
           children: [
             IconButton(
-              icon: Icon(Icons.menu), // Hamburger menü ikonu
+              icon: Icon(Icons.menu),
+              color: Colors.black,// Hamburger menü ikonu
               onPressed: () {
                 // Hamburger menü işlevselliğini burada ekleyin
               },
