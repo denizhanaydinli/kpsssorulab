@@ -1,6 +1,6 @@
-# figma
+# KPSS SORU LAB
 
-A new Flutter project.
+Sınav soru generator uyygulamasına hoşgeldiniz.
 
 ## Getting Started
 
