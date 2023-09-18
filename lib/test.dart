@@ -1,3 +1,4 @@
+import 'package:figma/report.dart';
 import 'package:flutter/material.dart';
 
 import 'categories.dart';
@@ -11,6 +12,12 @@ class TestScreen extends StatefulWidget {
 }
 
 class _TestScreenState extends State<TestScreen> {
+  void _openReportPage() {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => ReportScreen(),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +28,7 @@ class _TestScreenState extends State<TestScreen> {
           children: [
             IconButton(
               icon: Icon(Icons.menu), // Hamburger menü ikonu
-              onPressed: () {
-                // Hamburger menü işlevselliğini burada ekleyin
-              },
+              onPressed: _openReportPage,
             ),
             Text(
               widget.category.name, // Kategori adını buraya ekleyin
