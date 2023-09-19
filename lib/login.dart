@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         backgroundImage: AssetImage(
                           selectedAvatar,
                         ),
-                        radius: 50.0,
+                        radius: 90.0,
                       ),
                     ),
                     SizedBox(height: 48.0), // Resim ile metin arasında bir boşluk ekler

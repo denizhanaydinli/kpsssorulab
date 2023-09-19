@@ -21,7 +21,7 @@ class _ReportScreenState extends State<ReportScreen> {
               icon: Icon(Icons.menu),
               color: Colors.black,// Hamburger menü ikonu
               onPressed: () {
-                // Hamburger menü işlevselliğini burada ekleyin
+                //todo  Hamburger menü işlevselliğini burada ekleyin
               },
             ),
             const Text(
@@ -41,7 +41,7 @@ class _ReportScreenState extends State<ReportScreen> {
           children: [
             ElevatedButton(
               onPressed: () {
-                //rapor butonuna tıklanınca yapılacak işlemler
+                //todo rapor butonuna tıklanınca yapılacak işlemler
               },
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(16.0),
@@ -62,7 +62,7 @@ class _ReportScreenState extends State<ReportScreen> {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                // Kategori butonuna tıklanınca yapılacak işlem
+                //todo Kategori butonuna tıklanınca yapılacak işlem
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(16.0),
@@ -83,7 +83,7 @@ class _ReportScreenState extends State<ReportScreen> {
             SizedBox(height: 16.0), // Boşluk eklemek için SizedBox
             ElevatedButton(
               onPressed: () {
-                // Profil butonuna tıklanınca yapılacak işlem
+                //todo Profil butonuna tıklanınca yapılacak işlem
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(16.0),
@@ -104,7 +104,7 @@ class _ReportScreenState extends State<ReportScreen> {
             SizedBox(height: 16.0), // Boşluk eklemek için SizedBox
             ElevatedButton(
               onPressed: () {
-                // Ayarlar butonuna tıklanınca yapılacak işlem
+                //todo Ayarlar butonuna tıklanınca yapılacak işlem
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(16.0),
